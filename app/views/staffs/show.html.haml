@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Type:
+  = @staff.type
+%p
+  %b Name:
+  = @staff.name
+%p
+  %b College:
+  = @staff.college
+%p
+  %b Year:
+  = @staff.year
+%p
+  %b Email:
+  = @staff.email
+%p
+  %b Phone:
+  = @staff.phone
+%p
+  %b Past experience:
+  = @staff.past_experience
+%p
+  %b Why hire:
+  = @staff.why_hire
+
+= link_to 'Edit', edit_staff_path(@staff)
+\|
+= link_to 'Back', staffs_path

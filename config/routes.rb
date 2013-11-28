@@ -1,4 +1,6 @@
 Fobj::Application.routes.draw do
+  resources :staffs
+
   root to: 'home#index'
   get '/about'    => 'home#about'
   get '/contact'  => 'home#contact'
