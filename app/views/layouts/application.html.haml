@@ -29,11 +29,43 @@
       #nav-collapse.collapse.navbar-collapse
         %ul.nav.navbar-nav.navbar-right
           %li= link_to "Home", root_path
-          %li= link_to "About", about_path
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              About
+              %b.caret
+            %ul.dropdown-menu
+              %li= link_to "Udghosh", about_udghosh_path
+              %li= link_to "FOBJ", about_fobj_path
+              %li= link_to "Team", about_team_path
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              Events
+              %b.caret
+            %ul.dropdown-menu
+              %li= link_to "Dance", events_dance_path
+              %li= link_to "Dramatics", events_dramatics_path
+              %li= link_to "Extempore", events_extempore_path
+              %li= link_to "Quizzing", events_quizzing_path
+              %li= link_to "Singing", events_singing_path
+              %li= link_to "Fashion Show", events_fashion_show_path
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              Work with us
+              %b.caret
+            %ul.dropdown-menu
+              %li= link_to "Publicity", work_with_us_publicity_path
+              %li= link_to "Marketing", work_with_us_marketing_path
+              %li= link_to "Infrastructure", work_with_us_infrastructure_path
+              %li= link_to "Decoration", work_with_us_decoration_path
+              %li= link_to "Event Manager", work_with_us_event_manager_path
+              %li= link_to "Security", work_with_us_security_path
+              %li= link_to "Hospitality", work_with_us_hospitality_path
+              %li= link_to "Anchor", work_with_us_anchor_path
           %li= link_to "Schedule", schedule_path
           %li= link_to "Sponsors", sponsors_path
           %li= link_to "Contact", contact_path
 
+                
     .container
       .row
         = yield

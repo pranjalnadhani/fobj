@@ -1,0 +1,44 @@
+.form-horizontal
+  = form_tag(controller: :staffs, action: :create) do
+
+    .form-group
+      = label_tag :type, "Applying for", class: "control-label col-sm-2"
+      .col-sm-10
+        %p.form-control-static= @staff.type.humanize
+      = text_field_tag :type, @staff.type
+
+    .form-group
+      = label_tag :name, "Name", class: "control-label col-sm-2"
+      .col-sm-10
+        = text_field_tag :name, "", class: "form-control"
+
+    .form-group
+      = label_tag :year, "Year", class: "control-label col-sm-2"
+      .col-sm-2
+        = select("staff", "year", [1, 2, 3, 4].each {|p| [ p.to_s ] }, {}, class: "form-control")
+
+    .form-group
+      = label_tag :email, "Email", class: "control-label col-sm-2"
+      .col-sm-10
+        = text_field_tag :email, "", class: "form-control"
+
+    .form-group
+      = label_tag :phone, "Phone", class: "control-label col-sm-2"
+      .col-sm-10
+        = text_field_tag :phone, "", class: "form-control"
+
+    .form-group
+      = label_tag :past_experience, "Past experience (If Any)", class: "control-label col-sm-2"
+      .col-sm-10
+        = text_area_tag :past_experience, "", class: "form-control", rows: 5
+
+    .form-group
+      = label_tag :why_hire, "Why should we hire you?", class: "control-label col-sm-2"
+      .col-sm-10
+        = text_area_tag :why_hire, "", class: "form-control", rows: 5
+
+    .form-group
+      .col-sm-2
+      .col-sm-10
+        = submit_tag 'Register', class: "btn btn-large btn-primary"
+
