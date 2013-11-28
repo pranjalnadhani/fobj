@@ -1,8 +1,13 @@
 Fobj::Application.routes.draw do
+  root to: 'home#index'
+  get '/about'    => 'home#about'
+  get '/contact'  => 'home#contact'
+  get '/schedule' => 'home#schedule'
+  get '/sponsors' => 'home#sponsors'
   # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  # See how all your routes lay out with 'rake routes'.
 
-  # You can have the root of your site routed with "root"
+  # You can have the root of your site routed with 'root'
   # root 'welcome#index'
 
   # Example of regular route:
