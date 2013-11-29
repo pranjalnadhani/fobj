@@ -10,8 +10,11 @@
     .form-group
       = f.label :type, class: "control-label col-sm-2"
       .col-sm-10
-        %p.form-control-static= @staff.type.humanize
-        .hidden= f.text_field :type, class: "form-control"
+        - if @staff.type != ""
+          %p.form-control-static= @staff.type.humanize
+          .hidden= f.text_field :type, class: "form-control"
+        - else
+          = f.text_field :type, class: "form-control"
     .form-group
       = f.label :name, class: "control-label col-sm-2"
       .col-sm-10
@@ -19,7 +22,7 @@
     .form-group
       = f.label :college, class: "control-label col-sm-2"
       .col-sm-10
-        = f.number_field :college, class: "form-control"
+        = f.text_field :college, class: "form-control"
     .form-group
       = f.label :year, class: "control-label col-sm-2"
       .col-sm-10
@@ -31,13 +34,13 @@
     .form-group
       = f.label :past_experience, class: "control-label col-sm-2"
       .col-sm-10
-        = f.text_area :past_experience, class: "form-control"
+        = f.text_area :past_experience, class: "form-control", style: "min-width: 100%; max-width: 100%;"
     .form-group
       = f.label :why_hire, class: "control-label col-sm-2"
       .col-sm-10
-        = f.text_area :why_hire, class: "form-control"
+        = f.text_area :why_hire, class: "form-control", style: "min-width: 100%; max-width: 100%;"
     .form-group
       .col-sm-2
       .col-sm-10
         = f.submit 'Join', class: 'btn btn-primary'
-        = link_to 'Back', :back, class: 'btn btn-default'
+        = link_to 'Back', root_path, class: 'btn btn-default'

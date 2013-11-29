@@ -1,2 +1,50 @@
-%h1 About#fobj
-%p Find me in app/views/about/fobj.html.haml
+.well
+  %legend
+    %h1
+      Friends of Bihar and Jharkhand
+      %small (FOBJ)
+      
+  %p
+    A National Trust.
+    %br/
+    %p.text-info Founded on February 1, 2013
+    
+  %h2.text-info Trustees
+  .row
+    .col-sm-3
+      %center
+        %h3 Vikrant Vitsal
+    .col-sm-3
+      %center
+        %h3 Dr. Ajeet Kumar
+    .col-sm-3
+      %center
+        %h3 Dr. Rachna Prasad
+    .col-sm-3
+      %center
+        %h3 Dr. Ramakant Pandey
+      
+  %h2 Mission
+  %blockquote
+    “Empowering the youth of today through awareness in all possible educational disciplines alongwith developing an atmosphere conducive to creating and sustaining entrepreneurship and promoting retention of human resources"  
+    
+  %h2 General Information
+  %blockquote
+    “Friends of Bihar and Jharkhand” was founded by a group of passionate students of IIT Delhi with ground level support as well as inspiration by a number of professors of IIT Delhi. It was established so as to contribute towards the much required sustainable development of Bihar and Jharkhand."
+    
+  %h2 Work till now
+  %ol
+    %li Satellite Education system for the disadvantaged local students.
+    %li Mentorship Programmes.
+
+  %hr/
+  %form.form-horizontal
+    .form-group
+      %label.control-label.col-sm-2 Email
+      .col-sm-10
+        %p.form-control-static= link_to "info@fobj.org", "mailto:info@fobj.org"
+    .form-group
+      %label.control-label.col-sm-2 Website
+      .col-sm-10
+        %p.form-control-static= link_to "http://www.fobj.org", "http://www.fobj.org"
+
