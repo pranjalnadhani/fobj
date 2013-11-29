@@ -1,4 +1,5 @@
 class School < ActiveRecord::Base
+  self.inheritance_column = nil
   validates :name_of_school, presence: true
   validates :principal_name, presence: true
   validates :type, presence: true

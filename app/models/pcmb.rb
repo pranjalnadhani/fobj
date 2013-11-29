@@ -1,4 +1,5 @@
 class Pcmb < ActiveRecord::Base
+  self.inheritance_column = nil
   validates :full_name, presence: true
   validates :district, presence: true
   validates :school_name, presence: true
