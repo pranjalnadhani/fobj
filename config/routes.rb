@@ -1,23 +1,23 @@
 Fobj::Application.routes.draw do
-  get "about/udghosh"
-  get "about/fobj"
-  get "about/team"
-  get "work_with_us/publicity"
-  get "work_with_us/marketing"
-  get "work_with_us/infrastructure"
-  get "work_with_us/decoration"
-  get "work_with_us/event_manager"
-  get "work_with_us/security"
-  get "work_with_us/hospitality"
-  get "work_with_us/anchor"
-  get "events/dance"
-  get "events/dramatics"
-  get "events/extempore"
-  get "events/quizzing"
-  get "events/singing"
-  get "events/fashion_show"
   resources :staffs
 
+  get 'about/udghosh'
+  get 'about/fobj'
+  get 'about/team'
+  get 'work_with_us/publicity'
+  get 'work_with_us/marketing'
+  get 'work_with_us/infrastructure'
+  get 'work_with_us/decoration'
+  get 'work_with_us/event_manager'
+  get 'work_with_us/security'
+  get 'work_with_us/hospitality'
+  get 'work_with_us/anchor'
+  get 'events/dance'
+  get 'events/dramatics'
+  get 'events/extempore'
+  get 'events/quizzing'
+  get 'events/singing'
+  get 'events/fashion_show'
   root to: 'home#index'
   get '/about'    => 'home#about'
   get '/contact'  => 'home#contact'

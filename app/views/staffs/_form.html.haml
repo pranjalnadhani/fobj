@@ -1,34 +1,43 @@
-= form_for @staff do |f|
-  - if @staff.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@staff.errors.count, "error")} prohibited this staff from being saved:"
-      %ul
-        - @staff.errors.full_messages.each do |msg|
-          %li= msg
+.form-horizontal
+  = form_for @staff do |f|
+    - if @staff.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@staff.errors.count, "error")} prohibited this staff from being saved:"
+        %ul
+          - @staff.errors.full_messages.each do |msg|
+            %li= msg
 
-  .field
-    = f.label :type
-    = f.text_field :type
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :college
-    = f.text_field :college
-  .field
-    = f.label :year
-    = f.number_field :year
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :phone
-    = f.number_field :phone
-  .field
-    = f.label :past_experience
-    = f.text_area :past_experience
-  .field
-    = f.label :why_hire
-    = f.text_area :why_hire
-  .actions
-    = f.submit 'Save'
+    .form-group
+      = f.label :type, class: "control-label col-sm-2"
+      .col-sm-10
+        %p.form-control-static= @staff.type.humanize
+        .hidden= f.text_field :type, class: "form-control"
+    .form-group
+      = f.label :name, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.text_field :name, class: "form-control"
+    .form-group
+      = f.label :college, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.number_field :college, class: "form-control"
+    .form-group
+      = f.label :year, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.number_field :year, class: "form-control"
+    .form-group
+      = f.label :phone, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.number_field :phone, class: "form-control"
+    .form-group
+      = f.label :past_experience, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.text_area :past_experience, class: "form-control"
+    .form-group
+      = f.label :why_hire, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.text_area :why_hire, class: "form-control"
+    .form-group
+      .col-sm-2
+      .col-sm-10
+        = f.submit 'Join', class: 'btn btn-primary'
+        = link_to 'Back', :back, class: 'btn btn-default'

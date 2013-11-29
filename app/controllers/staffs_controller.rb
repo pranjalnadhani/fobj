@@ -15,6 +15,11 @@ class StaffsController < ApplicationController
   # GET /staffs/new
   def new
     @staff = Staff.new
+    if params[:type]
+      @staff.type = params[:type]
+    else
+      @staff.type = ""
+    end
   end
 
   # GET /staffs/1/edit
@@ -28,7 +33,7 @@ class StaffsController < ApplicationController
 
     respond_to do |format|
       if @staff.save
-        format.html { redirect_to root_path, notice: 'Staff was successfully created.' }
+        format.html { redirect_to @staff, notice: 'Staff was successfully created.' }
         format.json { render action: 'show', status: :created, location: @staff }
       else
         format.html { render action: 'new' }

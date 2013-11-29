@@ -1,3 +1,3 @@
 class Staff < ActiveRecord::Base
-  validates :name, presence: true
+  self.inheritance_column = nil
 end
