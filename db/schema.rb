@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131129083328) do
+ActiveRecord::Schema.define(version: 20131129085638) do
+
+  create_table "pcmbs", force: true do |t|
+    t.string   "full_name"
+    t.string   "district"
+    t.string   "school_name"
+    t.text     "school_address"
+    t.integer  "year"
+    t.date     "date_of_birth"
+    t.string   "gender"
+    t.integer  "mobile_number"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "schools", force: true do |t|
     t.string   "name_of_school"

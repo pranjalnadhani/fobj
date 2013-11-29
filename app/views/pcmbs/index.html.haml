@@ -1,0 +1,35 @@
+%h1 Listing pcmbs
+
+%table
+  %tr
+    %th Full name
+    %th District
+    %th School name
+    %th School address
+    %th Year
+    %th Date of birth
+    %th Gender
+    %th Mobile number
+    %th Email
+    %th
+    %th
+    %th
+
+  - @pcmbs.each do |pcmb|
+    %tr
+      %td= pcmb.full_name
+      %td= pcmb.district
+      %td= pcmb.school_name
+      %td= pcmb.school_address
+      %td= pcmb.year
+      %td= pcmb.date_of_birth
+      %td= pcmb.gender
+      %td= pcmb.mobile_number
+      %td= pcmb.email
+      %td= link_to 'Show', pcmb
+      %td= link_to 'Edit', edit_pcmb_path(pcmb)
+      %td= link_to 'Destroy', pcmb, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Pcmb', new_pcmb_path

@@ -1,0 +1,50 @@
+.form-horizontal
+  = form_for @pcmb do |f|
+    - if @pcmb.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@pcmb.errors.count, "error")} prohibited this pcmb from being saved:"
+        %ul
+          - @pcmb.errors.full_messages.each do |msg|
+            %li= msg
+
+    .form-group
+      = f.label :full_name, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.text_field :full_name, class: "form-control"
+    .form-group
+      = f.label :district, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.text_field :district, class: "form-control"
+    .form-group
+      = f.label :school_name, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.text_field :school_name, class: "form-control"
+    .form-group
+      = f.label :school_address, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.text_area :school_address, class: "form-control"
+    .form-group
+      = f.label :year, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.number_field :year, class: "form-control"
+    .form-group
+      = f.label :date_of_birth, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.date_select :date_of_birth, start_year: 1995, end_year: 2008, order: [:day, :month, :year],class: "form-control"
+    .form-group
+      = f.label :gender, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.select :gender, ["Male","Female"], class: "form-control"
+    .form-group
+      = f.label :mobile_number, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.number_field :mobile_number, class: "form-control"
+    .form-group
+      = f.label :email, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.text_field :email, class: "form-control"
+    .form-group
+      .col-sm-2
+      .col-sm-10
+        = f.submit "Submit form", class: "btn btn-primary"
+        = link_to "Back", :back, class: "btn btn-default"

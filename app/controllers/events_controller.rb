@@ -16,7 +16,4 @@ class EventsController < ApplicationController
 
   def fashion_show
   end
-  
-  def pcmb_test
-  end
 end

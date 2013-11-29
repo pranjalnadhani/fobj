@@ -1,6 +1,6 @@
 Fobj::Application.routes.draw do
+  resources :pcmbs
   resources :schools
-
   resources :staffs
 
   get 'about/udghosh'

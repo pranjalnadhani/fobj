@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Full name:
+  = @pcmb.full_name
+%p
+  %b District:
+  = @pcmb.district
+%p
+  %b School name:
+  = @pcmb.school_name
+%p
+  %b School address:
+  = @pcmb.school_address
+%p
+  %b Year:
+  = @pcmb.year
+%p
+  %b Date of birth:
+  = @pcmb.date_of_birth
+%p
+  %b Gender:
+  = @pcmb.gender
+%p
+  %b Mobile number:
+  = @pcmb.mobile_number
+%p
+  %b Email:
+  = @pcmb.email
+
+= link_to 'Edit', edit_pcmb_path(@pcmb)
+\|
+= link_to 'Back', pcmbs_path
