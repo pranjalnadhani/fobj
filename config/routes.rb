@@ -23,7 +23,6 @@ Fobj::Application.routes.draw do
   get 'events/pcmb_test'
   root to: 'home#index'
   get '/about'    => 'home#about'
-  get '/contact'  => 'home#contact'
   get '/schedule' => 'home#schedule'
   get '/sponsors' => 'home#sponsors'
   # The priority is based upon order of creation: first created -> highest priority.
