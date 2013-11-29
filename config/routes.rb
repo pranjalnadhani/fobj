@@ -1,4 +1,6 @@
 Fobj::Application.routes.draw do
+  resources :schools
+
   resources :staffs
 
   get 'about/udghosh'
@@ -18,6 +20,7 @@ Fobj::Application.routes.draw do
   get 'events/quizzing'
   get 'events/singing'
   get 'events/fashion_show'
+  get 'events/pcmb_test'
   root to: 'home#index'
   get '/about'    => 'home#about'
   get '/contact'  => 'home#contact'

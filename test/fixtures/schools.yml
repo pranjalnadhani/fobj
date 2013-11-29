@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_of_school: MyString
+  principal_name: MyString
+  type: 
+  place: MyString
+  affiliated_to: MyString
+  email: MyString
+  phone_no: 1
+
+two:
+  name_of_school: MyString
+  principal_name: MyString
+  type: 
+  place: MyString
+  affiliated_to: MyString
+  email: MyString
+  phone_no: 1

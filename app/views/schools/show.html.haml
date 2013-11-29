@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Name of school:
+  = @school.name_of_school
+%p
+  %b Principal name:
+  = @school.principal_name
+%p
+  %b Type:
+  = @school.type
+%p
+  %b Place:
+  = @school.place
+%p
+  %b Affiliated to:
+  = @school.affiliated_to
+%p
+  %b Email:
+  = @school.email
+%p
+  %b Phone no:
+  = @school.phone_no
+
+= link_to 'Edit', edit_school_path(@school)
+\|
+= link_to 'Back', schools_path

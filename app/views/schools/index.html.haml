@@ -1,0 +1,31 @@
+%h1 Listing schools
+
+%table
+  %tr
+    %th Name of school
+    %th Principal name
+    %th Type
+    %th Place
+    %th Affiliated to
+    %th Email
+    %th Phone no
+    %th
+    %th
+    %th
+
+  - @schools.each do |school|
+    %tr
+      %td= school.name_of_school
+      %td= school.principal_name
+      %td= school.type
+      %td= school.place
+      %td= school.affiliated_to
+      %td= school.email
+      %td= school.phone_no
+      %td= link_to 'Show', school
+      %td= link_to 'Edit', edit_school_path(school)
+      %td= link_to 'Destroy', school, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New School', new_school_path
