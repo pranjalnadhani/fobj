@@ -1,9 +1,9 @@
 .form-horizontal
   = form_for @school do |f|
     - if @school.errors.any?
-      #error_explanation.alert.alert-error
+      #error_explanation.alert.alert-danger
         %h2= "#{pluralize(@school.errors.count, "error")} prohibited this school from being saved:"
-        %ul
+        %ol
           - @school.errors.full_messages.each do |msg|
             %li= msg
 
@@ -18,11 +18,11 @@
     .form-group
       = f.label :type, "School type", class: "control-label col-sm-2"
       .col-sm-3
-        = f.select :type, ["Co-Ed","Boys","Girls"], {}, class: "form-control"
+        = f.select :type, ["Co-Ed","Boys","Girls"], { include_blank: "Select school type" }, class: "form-control"
     .form-group
       = f.label :place, class: "control-label col-sm-2"
       .col-sm-3
-        = f.select :place, Location.all.collect { |x| [x.place] }, {}, class: "form-control"
+        = f.select :place, Location.all.collect { |x| [x.place] }, { include_blank: "Select Location" }, class: "form-control"
     .form-group
       = f.label :affiliated_to, class: "control-label col-sm-2"
       .col-sm-10

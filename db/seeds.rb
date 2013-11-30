@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# Adding an admin
+
+User.create(email: "admin@iitd.com", password: "udghosh!2013")
+
 # Adding Default Locations
 Location.create(place: "Patna")
 Location.create(place: "Muzaffarpur")
