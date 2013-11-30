@@ -1,6 +1,10 @@
-.col-sm-1
-.well.col-sm-10
-  %legend New Intern
-  = render 'form'
-.col-sm-1
+.row
+  = render @staff.type
+
+.row
+  .col-sm-1
+  .well.col-sm-10
+    %legend Apply for Internship
+    = render 'form'
+  .col-sm-1
 

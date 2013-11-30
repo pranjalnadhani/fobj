@@ -1,17 +1,17 @@
 .form-horizontal
   = form_for @staff do |f|
     - if @staff.errors.any?
-      #error_explanation
+      #error_explanation.alert.alert-error
         %h2= "#{pluralize(@staff.errors.count, "error")} prohibited this staff from being saved:"
         %ul
           - @staff.errors.full_messages.each do |msg|
             %li= msg
 
     .form-group
-      = f.label :type, class: "control-label col-sm-2"
+      = f.label :type, "Intern type", class: "control-label col-sm-2"
       .col-sm-10
         - if @staff.type != ""
-          %p.form-control-static= @staff.type.humanize
+          %p.form-control-static= @staff.type.titleize
           .hidden= f.text_field :type, class: "form-control"
         - else
           = f.text_field :type, class: "form-control"
