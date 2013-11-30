@@ -1,7 +1,8 @@
 .form-horizontal
   = form_for @staff do |f|
     - if @staff.errors.any?
-      #error_explanation.alert.alert-error
+      #error_explanation.alert.alert-danger
+        %button(type="button" class="close" data-dismiss="alert" aria-hidden="true") X
         %h2= "#{pluralize(@staff.errors.count, "error")} prohibited this staff from being saved:"
         %ul
           - @staff.errors.full_messages.each do |msg|
@@ -28,15 +29,19 @@
       .col-sm-10
         = f.number_field :year, class: "form-control"
     .form-group
+      = f.label :email, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.email_field :email, class: "form-control"
+    .form-group
       = f.label :phone, class: "control-label col-sm-2"
       .col-sm-10
         = f.number_field :phone, class: "form-control"
     .form-group
-      = f.label :past_experience, class: "control-label col-sm-2"
+      = f.label :past_experience, "Past experience (if any)", class: "control-label col-sm-2"
       .col-sm-10
         = f.text_area :past_experience, class: "form-control", style: "min-width: 100%; max-width: 100%;"
     .form-group
-      = f.label :why_hire, class: "control-label col-sm-2"
+      = f.label :why_hire, "Why should we hire you?", class: "control-label col-sm-2"
       .col-sm-10
         = f.text_area :why_hire, class: "form-control", style: "min-width: 100%; max-width: 100%;"
     .form-group

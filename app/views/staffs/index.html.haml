@@ -1,6 +1,6 @@
 %h1 Listing staffs
 
-%table
+%table.table
   %tr
     %th Type
     %th Name
@@ -9,25 +9,25 @@
     %th Email
     %th Phone
     %th Past experience
-    %th Why hire
+    %th Reason for hire
     %th
     %th
     %th
 
   - @staffs.each do |staff|
     %tr
-      %td= staff.type
+      %td= staff.type.titleize
       %td= staff.name
-      %td= staff.college
+      %td= truncate staff.college
       %td= staff.year
       %td= staff.email
       %td= staff.phone
-      %td= staff.past_experience
-      %td= staff.why_hire
-      %td= link_to 'Show', staff
-      %td= link_to 'Edit', edit_staff_path(staff)
-      %td= link_to 'Destroy', staff, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= truncate staff.past_experience
+      %td= truncate staff.why_hire
+      %td= link_to 'Show', staff, class: "btn btn-info btn-sm"
+      %td= link_to 'Edit', edit_staff_path(staff), class: "btn btn-warning btn-sm"
+      %td= link_to 'Destroy', staff, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-danger btn-sm"
 
 %br
 
-= link_to 'New Staff', new_staff_path
+= link_to 'New Staff', new_staff_path, class: "btn btn-primary btn-sm"

@@ -2,6 +2,7 @@
   = form_for @school do |f|
     - if @school.errors.any?
       #error_explanation.alert.alert-danger
+        %button(type="button" class="close" data-dismiss="alert" aria-hidden="true") X
         %h2= "#{pluralize(@school.errors.count, "error")} prohibited this school from being saved:"
         %ol
           - @school.errors.full_messages.each do |msg|

@@ -1,5 +1,6 @@
 class PcmbsController < ApplicationController
   before_action :set_pcmb, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:new, :create, :show]
 
   # GET /pcmbs
   # GET /pcmbs.json

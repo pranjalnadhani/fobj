@@ -1,9 +1,10 @@
 .form-horizontal
   = form_for @pcmb do |f|
     - if @pcmb.errors.any?
-      #error_explanation
-        %h2= "#{pluralize(@pcmb.errors.count, "error")} prohibited this pcmb from being saved:"
-        %ul
+      #error_explanation.alert.alert-danger
+        %button(type="button" class="close" data-dismiss="alert" aria-hidden="true") X
+        %h2= "#{pluralize(@pcmb.errors.count, "error")} prohibited this test entry from being saved:"
+        %ol
           - @pcmb.errors.full_messages.each do |msg|
             %li= msg
 
@@ -30,11 +31,11 @@
     .form-group
       = f.label :date_of_birth, class: "control-label col-sm-2"
       .col-sm-10
-        = f.date_select :date_of_birth, start_year: 1995, end_year: 2008, order: [:day, :month, :year],class: "form-control"
+        = f.date_select :date_of_birth, { start_year: 1995, end_year: 2008, order: [:day, :month, :year], prompt: { day: "Select day", month: "Select month", year: "Select year" } }, { class: "form-control", style: "float: left; width: 30%; min-width: 30%; max-width: 30%; margin-right: 1%;" }
     .form-group
       = f.label :gender, class: "control-label col-sm-2"
-      .col-sm-10
-        = f.select :gender, ["Male","Female"], class: "form-control"
+      .col-sm-3
+        = f.select :gender, ["Male","Female"], { include_blank: "Select gender" }, class: "form-control"
     .form-group
       = f.label :mobile_number, class: "control-label col-sm-2"
       .col-sm-10

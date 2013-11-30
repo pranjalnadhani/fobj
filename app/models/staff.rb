@@ -8,6 +8,5 @@ class Staff < ActiveRecord::Base
   validates :year, presence: true
   validates :email, presence: true
   validates :phone, presence: true
-  validates :past_experience, presence: true
   validates :why_hire, presence: true
 end

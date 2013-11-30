@@ -1,4 +1,8 @@
-%p#notice= notice
+- if notice
+  #notice.alert.alert-error
+    %button(type="button" class="close" data-dismiss="alert" aria-hidden="true") X
+    %strong Congratulations!
+    = notice
 
 %p
   %b Full name:

@@ -1,5 +1,6 @@
 - if notice
   #notice.alert.alert-info
+    %button(type="button" class="close" data-dismiss="alert" aria-hidden="true") X
     %strong Congratulations!
     = notice
 
@@ -9,7 +10,7 @@
   .form-group
     %label.col-sm-2.control-label Internship Type:
     .col-sm-10
-      .form-control-static= @staff.type
+      .form-control-static= @staff.type.titleize
   .form-group
     %label.col-sm-2.control-label Name:
     .col-sm-10
@@ -43,6 +44,6 @@
   .form-group
     .col-sm-2
     .col-sm-10
-      - if can? :edit, :user
-        = link_to 'Edit', edit_staff_path(@staff)
+      - if can? :edit, :staff
+        = link_to 'Edit', edit_staff_path(@staff), class: "btn btn-warning"
       = link_to 'Back', staffs_path, class: "btn btn-info"
