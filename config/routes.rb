@@ -1,4 +1,5 @@
 Fobj::Application.routes.draw do
+  devise_for :users
   resources :pcmbs
   resources :schools
   resources :staffs

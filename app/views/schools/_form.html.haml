@@ -1,7 +1,7 @@
 .form-horizontal
   = form_for @school do |f|
     - if @school.errors.any?
-      #error_explanation
+      #error_explanation.alert.alert-error
         %h2= "#{pluralize(@school.errors.count, "error")} prohibited this school from being saved:"
         %ul
           - @school.errors.full_messages.each do |msg|
@@ -12,17 +12,17 @@
       .col-sm-10
         = f.text_field :name_of_school, class: "form-control"
     .form-group
-      = f.label :principal_name, class: "control-label col-sm-2"
+      = f.label :principal_name, "Principal's name", class: "control-label col-sm-2"
       .col-sm-10
         = f.text_field :principal_name, class: "form-control"
     .form-group
-      = f.label :type, class: "control-label col-sm-2"
-      .col-sm-10
-        = f.text_field :type, class: "form-control"
+      = f.label :type, "School type", class: "control-label col-sm-2"
+      .col-sm-3
+        = f.select :type, ["Co-Ed","Boys","Girls"], {}, class: "form-control"
     .form-group
       = f.label :place, class: "control-label col-sm-2"
-      .col-sm-10
-        = f.text_field :place, class: "form-control"
+      .col-sm-3
+        = f.select :place, Location.all.collect { |x| [x.place] }, {}, class: "form-control"
     .form-group
       = f.label :affiliated_to, class: "control-label col-sm-2"
       .col-sm-10
@@ -30,11 +30,11 @@
     .form-group
       = f.label :email, class: "control-label col-sm-2"
       .col-sm-10
-        = f.text_field :email, class: "form-control"
+        = f.email_field :email, class: "form-control"
     .form-group
       = f.label :phone_no, class: "control-label col-sm-2"
       .col-sm-10
-        = f.number_field :phone_no, class: "form-control"
+        = f.phone_field :phone_no, class: "form-control"
     .form-group
       .col-sm-2
       .col-sm-10

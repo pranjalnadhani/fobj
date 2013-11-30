@@ -1,5 +1,6 @@
 class StaffsController < ApplicationController
   before_action :set_staff, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:new, :create, :show]
 
   # GET /staffs
   # GET /staffs.json

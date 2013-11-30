@@ -1,27 +1,43 @@
-%p#notice= notice
+- if notice
+  #notice.alert.alert-info
+    %strong Congratulations!
+    = notice
 
-%p
-  %b Name of school:
-  = @school.name_of_school
-%p
-  %b Principal name:
-  = @school.principal_name
-%p
-  %b Type:
-  = @school.type
-%p
-  %b Place:
-  = @school.place
-%p
-  %b Affiliated to:
-  = @school.affiliated_to
-%p
-  %b Email:
-  = @school.email
-%p
-  %b Phone no:
-  = @school.phone_no
+.well.form-horizontal
+  %legend
+    %h1 School Details
+  .form-group
+    %label.col-sm-2.control-label Name of school:
+    .col-sm-10
+      .form-control-static= @school.name_of_school
+  .form-group
+    %label.col-sm-2.control-label Principal name:
+    .col-sm-10
+      .form-control-static= @school.principal_name
+  .form-group
+    %label.col-sm-2.control-label School Type:
+    .col-sm-10
+      .form-control-static= @school.type
+  .form-group
+    %label.col-sm-2.control-label Place:
+    .col-sm-10
+      .form-control-static= @school.place
+  .form-group
+    %label.col-sm-2.control-label Affiliated to:
+    .col-sm-10
+      .form-control-static= @school.affiliated_to
+  .form-group
+    %label.col-sm-2.control-label Email:
+    .col-sm-10
+      .form-control-static= @school.email
+  .form-group
+    %label.col-sm-2.control-label Phone no.:
+    .col-sm-10
+      .form-control-static= @school.phone_no
 
-= link_to 'Edit', edit_school_path(@school)
-\|
-= link_to 'Back', schools_path
+  %hr/
+  .form-group
+    .col-sm-2
+    .col-sm-10
+      = link_to 'Edit', edit_school_path(@school), class: "btn btn-warning"
+      = link_to 'Back', schools_path, class: "btn btn-info"

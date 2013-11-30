@@ -1,5 +1,6 @@
 class SchoolsController < ApplicationController
   before_action :set_school, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:new, :create, :show]
 
   # GET /schools
   # GET /schools.json
@@ -28,7 +29,7 @@ class SchoolsController < ApplicationController
 
     respond_to do |format|
       if @school.save
-        format.html { redirect_to @school, notice: 'School was successfully created.' }
+        format.html { redirect_to @school, notice: 'Your school has been registered!' }
         format.json { render action: 'show', status: :created, location: @school }
       else
         format.html { render action: 'new' }
@@ -42,7 +43,7 @@ class SchoolsController < ApplicationController
   def update
     respond_to do |format|
       if @school.update(school_params)
-        format.html { redirect_to @school, notice: 'School was successfully updated.' }
+        format.html { redirect_to @school, notice: 'Records were successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

@@ -1,30 +1,48 @@
-%p#notice= notice
+- if notice
+  #notice.alert.alert-info
+    %strong Congratulations!
+    = notice
 
-%p
-  %b Type:
-  = @staff.type
-%p
-  %b Name:
-  = @staff.name
-%p
-  %b College:
-  = @staff.college
-%p
-  %b Year:
-  = @staff.year
-%p
-  %b Email:
-  = @staff.email
-%p
-  %b Phone:
-  = @staff.phone
-%p
-  %b Past experience:
-  = @staff.past_experience
-%p
-  %b Why hire:
-  = @staff.why_hire
+.well.form-horizontal
+  %legend
+    %h1 Intern Details
+  .form-group
+    %label.col-sm-2.control-label Internship Type:
+    .col-sm-10
+      .form-control-static= @staff.type
+  .form-group
+    %label.col-sm-2.control-label Name:
+    .col-sm-10
+      .form-control-static= @staff.name
+  .form-group
+    %label.col-sm-2.control-label College:
+    .col-sm-10
+      .form-control-static= @staff.college
+  .form-group
+    %label.col-sm-2.control-label Year:
+    .col-sm-10
+      .form-control-static= @staff.year
+  .form-group
+    %label.col-sm-2.control-label Email:
+    .col-sm-10
+      .form-control-static= @staff.email
+  .form-group
+    %label.col-sm-2.control-label Phone no.:
+    .col-sm-10
+      .form-control-static= @staff.phone
+  .form-group
+    %label.col-sm-2.control-label Past experience:
+    .col-sm-10
+      .form-control-static= @staff.past_experience
+  .form-group
+    %label.col-sm-2.control-label Why should we hire you?
+    .col-sm-10
+      .form-control-static= @staff.why_hire
 
-= link_to 'Edit', edit_staff_path(@staff)
-\|
-= link_to 'Back', staffs_path
+  %hr/
+  .form-group
+    .col-sm-2
+    .col-sm-10
+      - if can? :edit, :user
+        = link_to 'Edit', edit_staff_path(@staff)
+      = link_to 'Back', staffs_path, class: "btn btn-info"

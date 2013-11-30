@@ -1,5 +1,5 @@
 .row
-  = render @staff.type
+  = render @staff.type if @staff.type != ""
 
 .row
   .col-sm-1
