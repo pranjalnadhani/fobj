@@ -35,7 +35,6 @@
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
                 Manage
-                / %b.caret
               %ul.dropdown-menu
                 %li= link_to "Schools", schools_path
                 %li= link_to "Interns", staffs_path
@@ -44,7 +43,7 @@
         %ul.nav.navbar-nav.navbar-right
           %li= link_to "Home", root_path
           %li.dropdown
-            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: about_path}
               About
             %ul.dropdown-menu
               %li= link_to "Udghosh", about_udghosh_path
