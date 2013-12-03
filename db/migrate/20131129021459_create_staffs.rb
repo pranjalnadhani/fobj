@@ -6,7 +6,7 @@ class CreateStaffs < ActiveRecord::Migration
       t.string :college
       t.integer :year
       t.string :email
-      t.integer :phone
+      t.string :phone
       t.text :past_experience
       t.text :why_hire
 

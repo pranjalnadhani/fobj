@@ -40,7 +40,8 @@ ActiveRecord::Schema.define(version: 20131130125107) do
     t.string   "place"
     t.string   "affiliated_to"
     t.string   "email"
-    t.integer  "phone_no"
+    t.string   "phone_no"
+    t.string   "contact_no"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -51,7 +52,7 @@ ActiveRecord::Schema.define(version: 20131130125107) do
     t.string   "college"
     t.integer  "year"
     t.string   "email"
-    t.integer  "phone"
+    t.string   "phone"
     t.text     "past_experience"
     t.text     "why_hire"
     t.datetime "created_at"

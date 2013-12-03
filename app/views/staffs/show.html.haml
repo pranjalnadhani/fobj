@@ -46,4 +46,4 @@
     .col-sm-10
       - if can? :edit, :staff
         = link_to 'Edit', edit_staff_path(@staff), class: "btn btn-warning"
-      = link_to 'Back', staffs_path, class: "btn btn-info"
+      = link_to 'Home', root_path, class: "btn btn-info"

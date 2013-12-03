@@ -11,7 +11,7 @@
     .form-group
       = f.label :name_of_school, class: "control-label col-sm-2"
       .col-sm-10
-        = f.text_field :name_of_school, class: "form-control"
+        = f.text_field :name_of_school, class: "form-control", placeholder: "Use full names, avoid short forms."
     .form-group
       = f.label :principal_name, "Principal's name", class: "control-label col-sm-2"
       .col-sm-10
@@ -27,15 +27,19 @@
     .form-group
       = f.label :affiliated_to, class: "control-label col-sm-2"
       .col-sm-10
-        = f.text_field :affiliated_to, class: "form-control"
+        = f.text_field :affiliated_to, class: "form-control", placeholder: "The Board or University, to which the school is affiliated."
     .form-group
       = f.label :email, class: "control-label col-sm-2"
       .col-sm-10
-        = f.email_field :email, class: "form-control"
+        = f.email_field :email, class: "form-control", placeholder: "example: name-of-school@email.com"
     .form-group
       = f.label :phone_no, class: "control-label col-sm-2"
       .col-sm-10
-        = f.phone_field :phone_no, class: "form-control"
+        = f.phone_field :phone_no, class: "form-control", placeholder: "The contact number of administrative office."
+    .form-group
+      = f.label :contact_no, class: "control-label col-sm-2"
+      .col-sm-10
+        = f.phone_field :contact_no, class: "form-control", placeholder: "The contact number which is always available."
     .form-group
       .col-sm-2
       .col-sm-10

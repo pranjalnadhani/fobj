@@ -7,7 +7,8 @@ class CreateSchools < ActiveRecord::Migration
       t.string :place
       t.string :affiliated_to
       t.string :email
-      t.integer :phone_no
+      t.string :phone_no
+      t.string :contact_no
 
       t.timestamps
     end
